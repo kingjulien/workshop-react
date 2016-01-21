@@ -37,7 +37,7 @@ webpack ( = server + babel + task runner )
 
 ##Tasks:
 1. nested components
-###create new component Hello & render it from AppComponent
+- create new component Hello & render it from AppComponent
 2. props
     pass the name, f.e. 'John' as parameter to Hello component
         2a) set default parameter
