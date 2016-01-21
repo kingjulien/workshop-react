@@ -1,24 +1,35 @@
 import React from 'react';
 
 class AppComponent extends React.Component {
+
     constructor(props) {
         super(props);
-        this.handleChange = this.handleChange.bind(this);
-        this.state = { inputValue : '' }
+        this.inputChange = this.inputChange.bind(this);
+        this.state = {names : this.props.names};
     }
 
     render() {
+        var Helloes = this.state.names.map(function (name) {
+            return (
+                <Hello name={name}/>
+            );
+        });
+
         return (
             <div className="index">
-                <Input onInputChange={this.handleChange} type="text" val="aa" placeholder="John" />
-                <Hello name={this.state.inputValue}/>
+                <Input onInputChange={this.inputChange}/>
+                {Helloes}
             </div>
         );
     }
 
-    handleChange(val) {
+    inputChange(searchString) {
+        var names = this.props.names.filter(function(name) {
+            return (searchString.length > 0) ? name.toLowerCase().match(searchString) : true;
+        });
+
         this.setState({
-            inputValue : val
+            names : names
         });
     }
 }
@@ -58,6 +69,5 @@ class Input extends React.Component {
         this.props.onInputChange(e.target.value);
     }
 }
-
 
 export default AppComponent;

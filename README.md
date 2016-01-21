@@ -1,7 +1,6 @@
 # workshop-react
 React.js workshop
 
-
 - ES6 some new features
     - modules
     import React from 'react'
@@ -33,39 +32,21 @@ f(1) === 50
 webpack ( = server + babel + task runner )
 
 
-Intro task
+##Intro task
 - write 'hello world'
 
-Tasks:
+##Tasks:
 1. nested components
     create new component Hello & render it from AppComponent
 2. props
-    pass 'hello world' as parameter to Hello component
+    pass the name, f.e. 'John' as parameter to Hello component
         2a) set default parameter
-        2b) map - display list of names - pass an array to Hello component and rewrite it using map function
-3. state - interaction
-    create input (react) element, render it from AppComponent & use it to pass the name as value to Hello component
-4. events
-    bind onkeyup event to input element
-5. create live search component, which will contain input box & list of filtered elements
-6. create recursive component(s) for displaying navigation (ul, li)
+        2b) map - display list of names - call Hello component for every name
+3. state, events - interaction
+    create input (react) element, render it from AppComponent
+    bind onChange event to input element
+4. create live search component, which will contain input box & list of filtered elements
 
-
-class ExampleComponent extends React.Component {
-    constructor() {
-        super();
-        this.handleClick = this.handleClick.bind(this);
-        this.state = { data : [] }
-    }
-    render() { 
-        return <div onClick={this.handleClick}>Hello, world.</div>;
-    }
-    handleClick() {
-        console.log(this); // this is an ExampleComponent
-    }
-}
-ExampleComponent.defaultProps = {
-};
-
-
-https://github.com/kingjulien/workshop-react.git
+Bonus:
+5. create recursive component(s), f.e. for displaying navigation (ul, li)
+6. use Redux for storing - https://github.com/rackt/redux
