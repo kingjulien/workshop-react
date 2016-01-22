@@ -1,27 +1,34 @@
-#React.js workshop
+# React.js workshop
 
-#Installation:
+# Installation:
+```
 install npm
 npm install -g yo
 npm install -g generator-react-webpack
 mkdir my-new-project && cd my-new-project
 yo react-webpack
 npm start
-**Installed!**
+```
+
+### Installed!
 
 
-- ES6 some new features
-    - modules
+### ES6 some new features
+#### modules
+```
     import React from 'react'
     export function sum (x, y) { return x + y }
+```
+#### default parameters
+```
+    function f (x, y = 7, z = 42) {
+        return x + y + z
+    }
+    f(1) === 50
+```
 
-    - default parameters
-function f (x, y = 7, z = 42) {
-    return x + y + z
-}
-f(1) === 50
-
-    - classes
+#### classes
+```
     class User {
         constructor (id, x, y) {
             this.id = id
@@ -32,30 +39,38 @@ f(1) === 50
             this.y = y
         }
     }
-
-    - arrow functions
+```
+#### arrow functions
+```
         var a2 = a.map(function(s){ return s.length });
         var a3 = a.map( s => s.length );
+```
 
+### Webpack ( = server + babel + task runner )
 
-webpack ( = server + babel + task runner )
+# Tasks
 
+### Intro task
+- **render** - change main.js to ES6 React component and display 'Hello world'
 
-##Intro task
-- render - change main.js to ES6 React component and display 'Hello world'
+1. **nested components**
 
-##Tasks:
-1. nested components
-create new component Hello & render it from AppComponent
-2. props
+    create new component Hello & render it from AppComponent
+2. **props**
+
     pass the name, f.e. 'John' as parameter to Hello component
+    
         2a) set default parameter
         2b) map - display list of names - call Hello component for every name
-3. state, events - interaction
+3. **state, events**
+
     create input (react) element, render it from AppComponent
     bind onChange event to input element
-4. create live search component, which will contain input box & list of filtered elements
+    
+4. **interaction**
 
-Bonus:
+    create live search component, which will contain input box & list of filtered elements
+
+#### Bonus tasks:
 5. create navigation menu using recursive component(s) (ul, li)
 6. use Redux for storing - https://github.com/rackt/redux
