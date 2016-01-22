@@ -1,12 +1,7 @@
-# workshop-react
-
 #React.js workshop
-
 
 #Installation:
 install npm
-clone/copy
-
 npm install -g yo
 npm install -g generator-react-webpack
 mkdir my-new-project && cd my-new-project
@@ -14,19 +9,53 @@ yo react-webpack
 npm start
 **Installed!**
 
+
+- ES6 some new features
+    - modules
+    import React from 'react'
+    export function sum (x, y) { return x + y }
+
+    - default parameters
+function f (x, y = 7, z = 42) {
+    return x + y + z
+}
+f(1) === 50
+
+    - classes
+    class User {
+        constructor (id, x, y) {
+            this.id = id
+            this.move(x, y)
+        }
+        move (x, y) {
+            this.x = x
+            this.y = y
+        }
+    }
+
+    - arrow functions
+        var a2 = a.map(function(s){ return s.length });
+        var a3 = a.map( s => s.length );
+
+
+webpack ( = server + babel + task runner )
+
+
+##Intro task
+- render - change main.js to ES6 React component and display 'Hello world'
+
 ##Tasks:
+1. nested components
+create new component Hello & render it from AppComponent
+2. props
+    pass the name, f.e. 'John' as parameter to Hello component
+        2a) set default parameter
+        2b) map - display list of names - call Hello component for every name
+3. state, events - interaction
+    create input (react) element, render it from AppComponent
+    bind onChange event to input element
+4. create live search component, which will contain input box & list of filtered elements
 
-###1. Hello World
-- change main.js to display 'Hello world' - render()
-
-###2. Nested components
-- create new component Hello.js and use it in Main.js
-
-###3. Hello 'John'
-- use props for passing name from Main.js to Hello.js
-
-
-###4. Live updates
-- states
-- create Input.js which will display input box
-- use onchange & setState, which will take value from input and display it as 'Hello [name]'
+Bonus:
+5. create navigation menu using recursive component(s) (ul, li)
+6. use Redux for storing - https://github.com/rackt/redux
