@@ -1,6 +1,8 @@
 # React.js workshop
 
 # Installation:
+### Webpack ( = server + babel + task runner )
+
 ```
 install npm
 npm install -g yo
@@ -45,8 +47,6 @@ npm start
         var a2 = a.map(function(s){ return s.length });
         var a3 = a.map( s => s.length );
 ```
-
-### Webpack ( = server + babel + task runner )
 
 # Tasks
 
